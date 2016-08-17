@@ -1,6 +1,5 @@
 def solve_n_queens(n)
     sol = (0..n-1).to_a.map{|x| [x]}
-
     (n).step(n**2-1, n) do |i|
     	tmp=[]
     	t=[]
@@ -11,7 +10,6 @@ def solve_n_queens(n)
     				tmp << t
     			end
     		end
-
     	end
     	sol=tmp
     end
@@ -19,7 +17,6 @@ def solve_n_queens(n)
     sol.each do |s|
     	out << ("."*(n**2)).chars.map.with_index{|x,i| s.include?(i) ? "Q" : x }.join.scan(/.{#{n}}/)
     end
-
     return out
 end
 
